@@ -6,20 +6,29 @@ import (
 )
 
 type Config struct {
-	DBUrl   string
-	SSLmode string
+	Host    string
+	Port    string
+	User    string
+	Pass    string
+	DbName  string
+	SSLMode string
 }
 
 func New() *Config {
 	return &Config{
-		DBUrl:   getString("DB_URL", "postgres://postgres:password@localhost:5432/stockshelf?"),
-		SSLmode: getString("sslmode", "disable"),
+		Host:    getString("POSTGRES_HOST", "localhost"),
+		Port:    getString("POSTGRES_PORT", "5432"),
+		User:    getString("POSTGRES_USER", "postgres"),
+		Pass:    getString("POSTGRES_PASSWORD", "password"),
+		DbName:  getString("POSTGRES_DB", "stockshelf"),
+		SSLMode: getString("sslmode", "disable"),
 	}
 }
 
 func (c *Config) ConnString() string {
 	return fmt.Sprintf(
-		c.DBUrl, c.SSLmode,
+		"postgres://%s:%s@%s:%s/%s?sslmode=%s",
+		c.User, c.Pass, c.Host, c.Port, c.DbName, c.SSLMode,
 	)
 }
 

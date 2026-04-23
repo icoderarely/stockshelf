@@ -7,4 +7,4 @@ CREATE TABLE
     stock INT NOT NULL DEFAULT 0,
     created_at TIMESTAMPTZ DEFAULT now (),
     updated_at TIMESTAMPTZ DEFAULT now ()
-  )
+  );
