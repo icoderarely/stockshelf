@@ -1,0 +1,25 @@
+.DS_Store
+
+# Go build outputs
+bin/
+dist/
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Coverage and profiling output
+coverage.out
+coverage*.txt
+*.prof
+
+# Environment and local config
+.env
+.env.*.local
+*.local
+
+# Editor and IDE settings
+.vscode/
+.idea/

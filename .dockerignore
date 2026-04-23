@@ -1,0 +1,26 @@
+.git
+.gitignore
+.DS_Store
+.vscode
+.idea
+
+# Local environment and secrets
+.env
+.env.*
+*.local
+
+# Go build and test artifacts
+bin/
+dist/
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+coverage.out
+
+# Temporary files
+tmp/
+temp/
+*.log
